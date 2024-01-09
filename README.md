@@ -1,4 +1,4 @@
-# Web APIs: Code Quiz: Module 6 Challenge
+# Third-Party APIs: Work Day Scheduler
 
 ## Description 
 
