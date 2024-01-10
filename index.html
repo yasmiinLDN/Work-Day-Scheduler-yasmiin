@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Work Day Scheduler</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Schedule Your Work Day!</title>
 </head>
 
 <body>
@@ -21,11 +21,56 @@
     <p id="currentDay" class="lead"></p>
   </header>
   <div class="container">
-    <!-- Timeblocks go here -->
+    <!-- TIME BLOCKS-->
+    <div id="9" class="row time-block">
+      <div class="col-md-2 hour">9am</div>
+      <textarea id="nineText" class="col-md-8 description"></textarea>
+      <button class="btn saveBtn col-md-2"><i class="fa-solid fa-floppy-disk fa-lg"></i></button>
+    </div>
+    <div id="10" class="row time-block">
+      <div class="col-md-2 hour">10am</div>
+      <textarea id="tenText" class="col-md-8 description"></textarea>
+      <button class="btn saveBtn col-md-2"><i class="fa-solid fa-floppy-disk fa-lg"></i></button>
+    </div>
+    <div id="11" class="row time-block">
+      <div class="col-md-2 hour">11am</div>
+      <textarea id="elevenText" class="col-md-8 description"></textarea>
+      <button class="btn saveBtn col-md-2"><i class="fa-solid fa-floppy-disk fa-lg"></i></button>
+    </div>
+    <div id="12" class="row time-block">
+      <div class="col-md-2 hour">12pm</div>
+      <textarea id="twelveText" class="col-md-8 description"></textarea>
+      <button class="btn saveBtn col-md-2"><i class="fa-solid fa-floppy-disk fa-lg"></i></button>
+    </div>
+    <div id="13" class="row time-block">
+      <div class="col-md-2 hour">1pm</div>
+      <textarea id="thirteenText" class="col-md-8 description"></textarea>
+      <button class="btn saveBtn col-md-2"><i class="fa-solid fa-floppy-disk fa-lg"></i></button>
+    </div>
+    <div id="14" class="row time-block">
+      <div class="col-md-2 hour">2pm</div>
+      <textarea id="fourteenText" class="col-md-8 description"></textarea>
+      <button class="btn saveBtn col-md-2"><i class="fa-solid fa-floppy-disk fa-lg"></i></button>
+    </div>
+    <div id="15" class="row time-block">
+      <div class="col-md-2 hour">3pm</div>
+      <textarea id="fifteenText" class="col-md-8 description"></textarea>
+      <button class="btn saveBtn col-md-2"><i class="fa-solid fa-floppy-disk fa-lg"></i></button>
+    </div>
+    <div id="16" class="row time-block">
+      <div class="col-md-2 hour">4pm</div>
+      <textarea id="sixteenText" class="col-md-8 description"></textarea>
+      <button class="btn saveBtn col-md-2"><i class="fa-solid fa-floppy-disk fa-lg"></i></button>
+    </div>
+    <div id="17" class="row time-block">
+      <div class="col-md-2 hour">5pm</div>
+      <textarea id="seventeenText" class="col-md-8 description"></textarea>
+      <button class="btn saveBtn col-md-2"><i class="fa-solid fa-floppy-disk fa-lg"></i></button>
+    </div>
   </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="./assets/js/day.js"></script>
 </body>
 
 </html>
