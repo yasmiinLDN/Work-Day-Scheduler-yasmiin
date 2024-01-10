@@ -1,38 +1,26 @@
-// nineTextEl = $('#nineText');
-// tenTextEl = $('#tenText');
-// elevenTextEl = $('#elevenText');
-// twelveTextEl = $('#twelveText');
-// thirteenTextEl = $('#thirteenText');
-// fourteenTextEl = $('#fourteenText');
-// fifteenTextEl = $('#fifteenText');
-// sixteenTextEl = $('#sixteenText');
-// seventeenTextEl = $('#seventeenText');
-
-// // Array of query selectors
-// const textAreas = [
-//    nineTextEl, 
-//     tenTextEl, 
-//     elevenTextEl,
-//     twelveTextEl,
-//     thirteenTextEl,
-//     fourteenTextEl,
-//     fifteenTextEl,
-//     sixteenTextEl,
-//     seventeenTextEl
-// ];
+nineTextEl = $('#nineText');
+tenTextEl = $('#tenText');
+elevenTextEl = $('#elevenText');
+twelveTextEl = $('#twelveText');
+thirteenTextEl = $('#thirteenText');
+fourteenTextEl = $('#fourteenText');
+fifteenTextEl = $('#fifteenText');
+sixteenTextEl = $('#sixteenText');
+seventeenTextEl = $('#seventeenText');
 
 // Array of query selectors
 const textAreas = [
-    $('#nineText'), 
-    $('#tenText'), 
-    $('#elevenText'),
-    $('#twelveText'),
-    $('#thirteenText'),
-    $('#fourteenText'),
-    $('#fifteenText'),
-    $('#sixteenText'),
-    $('#seventeenText')
+    nineTextEl,
+    tenTextEl,
+    elevenTextEl,
+    twelveTextEl,
+    thirteenTextEl,
+    fourteenTextEl,
+    fifteenTextEl,
+    sixteenTextEl,
+    seventeenTextEl
 ];
+
 
 $(document).ready(function () {
 
@@ -46,7 +34,7 @@ $(document).ready(function () {
         let currentHour = dayjs().hour()
         let timeBlocksEl = $('.time-block')
 
-        timeBlocks.each(function () {
+        timeBlocksEl.each(function () {
             let blockHour = parseInt($(this).attr('id'))
 
             if (currentHour > blockHour) {
@@ -61,51 +49,32 @@ $(document).ready(function () {
                 $(this).removeClass('present')
                 $(this).addClass('future')
             }
-            updateHour()
-
-            setInterval(updateHour, 15000)
-
-
-            $('saveBtn').click(function (e) {
-                e.preventDefault();
-            // Loop through each query selector???
-            $.each(textAreas, function(i, selector) {
-
-                if (textAreas[i] !== '') {
-                // grab the element using the current query selector
-                const currentTextEl = $(selector);
-            
-                // grab the text content of the element
-                const textContent = currentTextEl.text();
-            
-                // Save the text content to local storage with a key based on the index
-                localStorage.setItem(`textElement${i + 1}`, textContent);
-                
-                console.log(textContent);
-            }
-        else {
-            console.log("nothing logged");
-        }
-    });
-            console.log('Loop completed.');
-            console.log(e);
-            })
-            // load any saved data from localStorages 
         })
-
-
-
     }
+    updateHour();
+
+    setInterval(updateHour, 15000)
+
+
+    $('.saveBtn').click(function (e) {
+        e.preventDefault();
+        const currentInputEl = $(this).parent().attr('id');
+        // console.log(currentInputEl);
+        const inputValue = $(this).siblings("textarea").val();
+        localStorage.setItem(currentInputEl, inputValue);
+    })
+    // load any saved data from localStorages 
+
+// separate your code by its behaviours and user workflow/interaction -- e.g. save function above should only happen once you've clicked the save button (after inputting text).
+
+// .each loop performs the below function at each index of the chosen selector/array (in case its a selector called "time block")
+// .each is an array method --> performs the function at each index of the array
+$('.time-block').each( function() {
+    const inputDiv = $(this).attr('id');
+    // console.log(inputDiv);
+    $(this).children(".description").val(localStorage.getItem(inputDiv));
 })
 
-// OLD PSEUDOCODE/NOTES FOR STORING TO LOCAL
-// $('saveBtn').click(function (event) {
-//     event.preventDefault();
-//     // validate the fields?
-//     // grab values of the textareas (class of the text description)
-//     // save the values to local storage using the ids as the keys and the values of the textareas for the values
-//     // 
 
- 
-// // load any saved data from localStorages    
-// })
+
+})
